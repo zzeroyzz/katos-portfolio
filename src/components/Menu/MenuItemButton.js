@@ -14,6 +14,7 @@ const MenuItemButton = ({ children, icon, ...props }) => {
       _focus={{ boxShadow: 'none' }}
       {...props}
       minHeight="40px"
+      
 
     >
       {icon && <span style={{ marginRight: '10px' }}>{icon}</span>}

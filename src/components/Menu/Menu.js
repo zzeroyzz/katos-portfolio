@@ -60,13 +60,21 @@ const Menu = ({ isOpen, onClose, onMenuItemClick }) => {
         <Divider my={2} />
 
         {menuItems.slice(4).map((item, index) => (
-          <MenuItemButton key={index} icon={<Icon as={item.icon} />} onClick={() => {
-              onMenuItemClick(item.label);
-              onClose();
-            }}>
-            <Text>{item.label}</Text>
-          </MenuItemButton>
-        ))}
+  <MenuItemButton
+    key={index}
+    icon={<Icon as={item.icon} />}
+    onClick={() => {
+      if (item.action === 'shutdown') {
+        window.location.reload();
+      } else {
+        onMenuItemClick(item.label);
+      }
+      onClose();
+    }}>
+    <Text>{item.label}</Text>
+  </MenuItemButton>
+))}
+
       </Flex>
     </Box>
   );
