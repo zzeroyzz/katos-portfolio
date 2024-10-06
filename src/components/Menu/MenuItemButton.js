@@ -8,15 +8,15 @@ const MenuItemButton = ({ children, icon, ...props }) => {
       alignItems="center"
       justifyContent="flex-start"
       w="100%"
-      borderRadius="0px"  // Removes border radius
+      borderRadius="0px"
       px="10px"
-      _hover={{ bg: 'gray.200' }}  // Customize hover effect if needed
-      _focus={{ boxShadow: 'none' }}  // Removes focus box shadow
+      _hover={{ bg: 'gray.200' }}
+      _focus={{ boxShadow: 'none' }}
       {...props}
       minHeight="40px"
-      
+
     >
-      {icon && <span style={{ marginRight: '10px' }}>{icon}</span>}  {/* Optional icon */}
+      {icon && <span style={{ marginRight: '10px' }}>{icon}</span>}
       {children}
     </Button>
   );

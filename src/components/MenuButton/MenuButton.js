@@ -6,18 +6,18 @@ const MenuButton = ({ onClick, children }) => {
     <Box
       as="button"
       onClick={onClick}
-      height="40px"  // Adjust height to match the design
+      height="40px"
       width="150px"
       lineHeight="1.2"
       transition="all 0.2s cubic-bezier(.08,.52,.52,1)"
-      px="16px"  // Padding for the button
-      borderRadius="0"  // No border-radius for sharp corners
+      px="16px"
+      borderRadius="0"
       fontSize="14px"
       fontWeight="semibold"
-      bg="gray.100"  // Light gray background
-      color="black"  // Black text
-      boxShadow="3px 3px 0px #888"  // Shadow effect to make it appear raised
-      _hover={{ bg: 'gray.200' }}  // Slightly darker on hover
+      bg="gray.100"
+      color="black"
+      boxShadow="3px 3px 0px #888"
+      _hover={{ bg: 'gray.200' }}
     >
       {children}
     </Box>
