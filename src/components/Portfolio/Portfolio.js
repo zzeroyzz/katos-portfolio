@@ -1,5 +1,3 @@
-// Portfolio.js
-
 import React, { useState } from 'react';
 import { Box, Image, VStack, Text } from '@chakra-ui/react';
 import portfolio from '../../assets/portfolio.png';

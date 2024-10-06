@@ -32,8 +32,8 @@ const ServicesWindow = ({isWindowOpen, toggleWindow, zIndex, bringToFront }) => 
           </VStack>
         }
         onClose={toggleWindow}
-        zIndex={zIndex}  // Pass zIndex to WindowBox
-        bringToFront={bringToFront}  // Bring to the front when clicked
+        zIndex={zIndex}
+        bringToFront={bringToFront}
       />
     )}
     </>

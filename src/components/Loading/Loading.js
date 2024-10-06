@@ -5,9 +5,8 @@ import kato from '../../assets/kato.png';
 const LoadingScreen = () => {
   const [progress, setProgress] = useState(0);
   const [visibleMessages, setVisibleMessages] = useState([]);
-  const [loadingDots, setLoadingDots] = useState('');  // State to control dots
+  const [loadingDots, setLoadingDots] = useState('');
 
-  // Simulate progress
   useEffect(() => {
     const interval = setInterval(() => {
       setProgress((oldProgress) => {
@@ -15,29 +14,25 @@ const LoadingScreen = () => {
           clearInterval(interval);
           return oldProgress;
         }
-        return Math.min(oldProgress + 5, 100);  // Slower increment for smoother sync
+        return Math.min(oldProgress + 5, 100);
       });
-    }, 200);  // Progress every 200ms
-
+    }, 200);
     return () => clearInterval(interval);
   }, []);
 
-  // Animate the loading dots
   useEffect(() => {
     const dotInterval = setInterval(() => {
       setLoadingDots((prevDots) => {
         if (prevDots.length < 3) {
           return prevDots + '.';
         } else {
-          return '';  // Reset after three dots
+          return '';
         }
       });
-    }, 500);  // Adjust speed of dot appearance here (500ms)
-
+    }, 500);
     return () => clearInterval(dotInterval);
   }, []);
 
-  // Move loadingMessages inside useEffect to avoid dependency issues
   useEffect(() => {
     const loadingMessages = [
       "Establishing secure connection...",
@@ -64,17 +59,17 @@ const LoadingScreen = () => {
         setVisibleMessages((prev) => {
           const newMessages = [...prev, loadingMessages[messageIndex]];
           if (newMessages.length > 4) {
-            newMessages.shift(); // Keep only the latest 4 messages
+            newMessages.shift();
           }
           return newMessages;
         });
         messageIndex += 1;
       }
-    }, 300);  // Adjust message speed to match the progress bar
+    }, 300);
 
     return () => clearInterval(messageInterval);
-  }, []);  // Empty dependency array ensures it runs only once
-
+  }, []);
+  
   return (
     <Box
       display="flex"
@@ -86,23 +81,18 @@ const LoadingScreen = () => {
       color="white"
       fontFamily="'Courier New', Courier, monospace"
     >
-      {/* Image at the top */}
       <Image src={kato} alt="Kato" boxSize="100px" mb={4} />
 
-      {/* Loading Text with Dots */}
       <Text fontSize="lg" mb={4}>
-        LOADING{loadingDots}  {/* Dots will appear here */}
+        LOADING{loadingDots}
       </Text>
-
-      {/* Progress Bar and Percentage */}
       <Flex width="30%" justifyContent="space-between" alignItems="center">
         <Box flex="2">
-          {/* Fatter and tan-colored progress bar */}
           <Progress
             value={progress}
-            size="lg"  // Make the bar "fatter"
-            height="16px"  // Increase height for more thickness
-            colorScheme="orange"  // Adjust color to tan-like appearance
+            size="lg"
+            height="16px"
+            colorScheme="orange"
             hasStripe
             isAnimated
           />
@@ -110,7 +100,6 @@ const LoadingScreen = () => {
         </Box>
       </Flex>
 
-      {/* Loading Messages */}
       <Box align="start" minHeight="100px" mt={4}>
         {visibleMessages.map((message, index) => (
           <Text key={index} fontSize="sm">{message}</Text>

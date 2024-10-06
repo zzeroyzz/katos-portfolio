@@ -1,6 +1,5 @@
 import React from 'react';
 import { Text, Heading, Flex, useBreakpointValue } from '@chakra-ui/react';
-
 import WindowBox from '../WindowBox/WindowBox';
 import ContactForm from './ContactForm';
 
@@ -29,8 +28,8 @@ const ContactWindow = ({isWindowOpen, toggleWindow, zIndex, bringToFront}) =>{
         </Flex>
       }
       onClose={toggleWindow}
-      zIndex={zIndex}  // Pass zIndex to WindowBox
-      bringToFront={bringToFront}  // Bring to the front when clicked
+      zIndex={zIndex}
+      bringToFront={bringToFront}
     />
   )}
 

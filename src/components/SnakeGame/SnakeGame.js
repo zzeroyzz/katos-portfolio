@@ -26,7 +26,6 @@ const SnakeGame = ({ zIndex, bringToFront }) => {
         _hover={{ bg: 'none' }}
         onClick={toggleWindow}
         overflow="hidden"
-        
       >
         <VStack spacing={1}>
           <Image src={tetris} boxSize={20} alt="Tetris" />

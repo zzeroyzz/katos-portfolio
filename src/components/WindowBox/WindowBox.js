@@ -22,7 +22,7 @@ const WindowBox = ({ title, content, onClose, zIndex, bringToFront, backgroundCo
       bounds="window"
       style={{ zIndex }}
       onMouseDown={() => {
-        bringToFront(); // Ensure that this updates the zIndex value for the clicked window
+        bringToFront();
         console.log("Bringing window to front with zIndex:", zIndex);
       }}
       disableDragging={isMobile}

@@ -59,9 +59,6 @@ const ContactForm = () => {
                 <Button type="submit" colorScheme="blue">Send Message</Button>
               </VStack>
             </Box>
-
-
-
     </>
   );
 };
