@@ -1,8 +1,6 @@
 import { useState } from 'react';
-import { Box, Image, Text, VStack,Heading,Flex } from '@chakra-ui/react';
+import { Box, Image, Text, VStack } from '@chakra-ui/react';
 import mail from '../../assets/mail.png';
-import WindowBox from '../WindowBox/WindowBox';
-import ContactForm from './ContactForm';
 import ContactWindow from './ContactWindow';
 
 const ContactButton = ({ zIndex, bringToFront }) => {

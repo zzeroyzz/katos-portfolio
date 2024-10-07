@@ -1,4 +1,4 @@
-import { Flex, useBreakpointValue } from '@chakra-ui/react';
+import { Flex } from '@chakra-ui/react';
 import Portfolio from '../Portfolio/Portfolio';
 import Services from '../Services/Services';
 import Contact from '../Contact/Contact';
@@ -8,7 +8,6 @@ import useZindexManager from '../../hooks/useZIndexManager';
 const IconButtons = () => {
   const { windowZIndexes, bringToFront } = useZindexManager();
 
-  const isMobile = useBreakpointValue({ base: true, md: false });
 
   return (
     <Flex

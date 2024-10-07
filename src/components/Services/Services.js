@@ -1,10 +1,7 @@
 import { useState } from 'react';
-import { Box, Image, Text, VStack, Flex } from '@chakra-ui/react';
+import { Box, Image, Text, VStack } from '@chakra-ui/react';
 import "@lottiefiles/lottie-player";
 import support from '../../assets/support.png';
-import services from '../../assets/services.png';
-import servicesData from './constants';
-import WindowBox from '../WindowBox/WindowBox';
 import ServicesWindow from './ServicesWindow';
 
 const Services = ({ zIndex, bringToFront }) => {
