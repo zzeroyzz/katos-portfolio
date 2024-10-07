@@ -1,3 +1,5 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Button } from '@chakra-ui/react';
 
 const MenuItemButton = ({ children, icon, ...props }) => {
@@ -14,13 +16,19 @@ const MenuItemButton = ({ children, icon, ...props }) => {
       _focus={{ boxShadow: 'none' }}
       {...props}
       minHeight="40px"
-      
+
 
     >
       {icon && <span style={{ marginRight: '10px' }}>{icon}</span>}
       {children}
     </Button>
   );
+};
+
+MenuItemButton.propTypes = {
+  onClick: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
+  icon: PropTypes.node,
 };
 
 export default MenuItemButton;

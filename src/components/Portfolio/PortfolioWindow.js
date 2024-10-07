@@ -1,6 +1,5 @@
-// PortfolioWindow.js
-
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   Box,
   HStack,
@@ -14,11 +13,12 @@ import {
   Heading,
   Stack,
   Flex,
-  useBreakpointValue } from '@chakra-ui/react';
+  useBreakpointValue,
+} from '@chakra-ui/react';
 import websites from '../../assets/websites.png';
 import resume from '../../assets/resume.png';
 import googledrive from '../../assets/googledrive.png';
-import { portfolioItems, resumeLink } from './constants';
+import { portfolioItems, resumeLink, websiteWindowText } from './constants';
 import WindowBox from '../WindowBox/WindowBox';
 
 const PortfolioWindow = ({
@@ -36,9 +36,9 @@ const PortfolioWindow = ({
   };
 
   const windowSize = useBreakpointValue({
-    base: { width: "380px", height: "400px" },
-    md: { width: "500px", height: "400px" },
-    lg: { width: "500px", height: "400px" },
+    base: { width: '380px', height: '400px' },
+    md: { width: '500px', height: '400px' },
+    lg: { width: '500px', height: '400px' },
   });
 
   return (
@@ -62,7 +62,7 @@ const PortfolioWindow = ({
                 _hover={{ bg: 'none' }}
                 onClick={toggleWebsitesWindow}
               >
-                <Image src={websites} boxSize={{base:40, lg:60}} alt="Websites Folder" />
+                <Image src={websites} boxSize={{ base: 40, lg: 60 }} alt="Websites Folder" />
               </Box>
 
               <Box
@@ -76,7 +76,7 @@ const PortfolioWindow = ({
                 _hover={{ bg: 'none' }}
                 onClick={toggleResumeWindow}
               >
-                <Image src={resume} boxSize={{base:40, lg:60}} alt="Resume Folder" />
+                <Image src={resume} boxSize={{ base: 40, lg: 60 }} alt="Resume Folder" />
               </Box>
             </HStack>
           }
@@ -95,9 +95,9 @@ const PortfolioWindow = ({
           content={
             <VStack spacing={3} align="start" backgroundColor="white" height="100%" minH="50vh" p={10}>
               <Text fontSize="lg" fontWeight="bold">
-                Websites I've designed and developed
+               {websiteWindowText}
               </Text>
-              <Grid templateColumns={{base:"repeat(1, 1fr)", lg:"repeat(2, 1fr)"}} gap={6}>
+              <Grid templateColumns={{ base: 'repeat(1, 1fr)', lg: 'repeat(2, 1fr)' }} gap={6}>
                 {portfolioItems.map((item, index) => (
                   <Box key={index} cursor="pointer" onClick={() => handleBoxClick(item.url)} maxWidth="400px">
                     <Card border="1px solid black" borderRadius="8px" boxShadow="md" maxW="md" maxH="sm" minH="sm">
@@ -147,6 +147,17 @@ const PortfolioWindow = ({
       )}
     </>
   );
+};
+
+PortfolioWindow.propTypes = {
+  isPortfolioWindowOpen: PropTypes.bool.isRequired,
+  togglePortfolioWindow: PropTypes.func.isRequired,
+  toggleWebsitesWindow: PropTypes.func.isRequired,
+  toggleResumeWindow: PropTypes.func.isRequired,
+  zIndex: PropTypes.number.isRequired,
+  bringToFront: PropTypes.func.isRequired,
+  isWebsitesWindowOpen: PropTypes.bool.isRequired,
+  isResumeWindowOpen: PropTypes.bool.isRequired,
 };
 
 export default PortfolioWindow;

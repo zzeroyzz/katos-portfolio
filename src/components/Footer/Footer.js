@@ -146,7 +146,7 @@ const Footer = () => {
       </Box>
       <Menu isOpen={isMenuOpen} onClose={toggleMenu} onMenuItemClick={handleMenuItemClick} />
       {renderComponent()}
-      <style jsx global>{`
+      <style>{`
         @keyframes scroll {
           0% {
             transform: translateX(100%);

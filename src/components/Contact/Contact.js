@@ -1,8 +1,7 @@
-import { useState } from 'react';
-import { Box, Image, Text, VStack,Heading,Flex } from '@chakra-ui/react';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import { Box, Image, Text, VStack } from '@chakra-ui/react';
 import mail from '../../assets/mail.png';
-import WindowBox from '../WindowBox/WindowBox';
-import ContactForm from './ContactForm';
 import ContactWindow from './ContactWindow';
 
 const ContactButton = ({ zIndex, bringToFront }) => {
@@ -34,6 +33,13 @@ const ContactButton = ({ zIndex, bringToFront }) => {
     <ContactWindow isWindowOpen={isWindowOpen} toggleWindow={toggleWindow} zIndex={zIndex} bringToFront={bringToFront}/>
     </>
   );
+};
+
+ContactButton.propTypes = {
+  isWindowOpen: PropTypes.bool.isRequired,
+  toggleWindow: PropTypes.func.isRequired,
+  zIndex: PropTypes.number.isRequired,
+  bringToFront: PropTypes.func.isRequired,
 };
 
 export default ContactButton;

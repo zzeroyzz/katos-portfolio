@@ -1,3 +1,5 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Box, useBreakpointValue } from '@chakra-ui/react';
 import WindowBox from '../WindowBox/WindowBox';
 import SnakeGameIframe from './SnakeGameIframe';
@@ -29,5 +31,10 @@ const SnakeWindow =({isWindowOpen, toggleWindow, zIndex, bringToFront}) =>{
       )}</>
   )
 };
-
+SnakeWindow.propTypes = {
+  isWindowOpen: PropTypes.bool.isRequired,
+  toggleWindow: PropTypes.func.isRequired,
+  zIndex: PropTypes.number.isRequired,
+  bringToFront: PropTypes.func.isRequired,
+};
 export default SnakeWindow;
