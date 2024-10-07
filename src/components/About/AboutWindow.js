@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Image, Text, VStack, Flex, Box, useBreakpointValue } from '@chakra-ui/react';
 import "@lottiefiles/lottie-player";
 import kato from '../../assets/kato.png';
@@ -23,11 +24,11 @@ const AboutWindow = ({isWindowOpen, toggleWindow, zIndex, bringToFront}) => {
             <VStack spacing={3} backgroundColor="white" p={3}>
               <Box backgroundColor="pink" borderRadius='full'>
               <Image src={kato} boxSize={40} alt="About"  borderRadius='full'/>
-</Box>
+              </Box>
               {aboutData.map((service, index) => (
                 <Flex key={index} textAlign="left" flexDirection="column" gap={2}>
                   <Text fontWeight="bold">{service.title}</Text>
-                  <Text fontSize={{base: "xs",lg:"md"}}>{service.description}</Text>
+                  <Text fontSize={{base: "xs", lg:"md"}}>{service.description}</Text>
                 </Flex>
               ))}
             </VStack>
@@ -39,6 +40,13 @@ const AboutWindow = ({isWindowOpen, toggleWindow, zIndex, bringToFront}) => {
       )}
     </>
   );
+};
+
+AboutWindow.propTypes = {
+  isWindowOpen: PropTypes.bool.isRequired,
+  toggleWindow: PropTypes.func.isRequired,
+  zIndex: PropTypes.number.isRequired,
+  bringToFront: PropTypes.func.isRequired,
 };
 
 export default AboutWindow;

@@ -17,3 +17,5 @@ export const  portfolioItems = [
 ];
 
 export const resumeLink = "https://drive.google.com/file/d/1294BVsSA_Qocl6I09bZF35JrXYoo5ZQe/view?usp=sharing"
+
+export const websiteWindowText = "Websites I've designed and developed"

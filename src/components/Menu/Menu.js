@@ -1,4 +1,5 @@
-import { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
 import { Box, Text, Flex, Divider, Icon } from '@chakra-ui/react';
 import MenuItemButton from './MenuItemButton';
 import { menuItems } from './constants';
@@ -78,6 +79,11 @@ const Menu = ({ isOpen, onClose, onMenuItemClick }) => {
       </Flex>
     </Box>
   );
+};
+Menu.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  onClose: PropTypes.bool.isRequired,
+  onMenuItemClick: PropTypes.func.isRequired,
 };
 
 export default Menu;

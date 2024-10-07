@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Text, Heading, Flex, useBreakpointValue } from '@chakra-ui/react';
 import WindowBox from '../WindowBox/WindowBox';
 import ContactForm from './ContactForm';
@@ -36,4 +37,12 @@ const ContactWindow = ({isWindowOpen, toggleWindow, zIndex, bringToFront}) =>{
   </>
 )
 };
+
+ContactWindow.propTypes = {
+  isWindowOpen: PropTypes.bool.isRequired,
+  toggleWindow: PropTypes.func.isRequired,
+  zIndex: PropTypes.number.isRequired,
+  bringToFront: PropTypes.func.isRequired,
+};
+
 export default ContactWindow;

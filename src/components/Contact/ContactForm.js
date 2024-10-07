@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Box, VStack, Input, Textarea, Button } from '@chakra-ui/react';
 import { send } from 'emailjs-com';
 

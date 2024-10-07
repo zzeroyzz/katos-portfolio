@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { Box, Image, Text, VStack } from '@chakra-ui/react';
 import "@lottiefiles/lottie-player";
 import support from '../../assets/support.png';
@@ -35,5 +36,8 @@ const Services = ({ zIndex, bringToFront }) => {
     </>
   );
 };
-
+Services.propTypes = {
+  zIndex: PropTypes.number.isRequired,
+  bringToFront: PropTypes.func.isRequired,
+};
 export default Services;

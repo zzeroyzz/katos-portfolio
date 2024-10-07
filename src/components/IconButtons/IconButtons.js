@@ -1,3 +1,4 @@
+import React from 'react';
 import { Flex } from '@chakra-ui/react';
 import Portfolio from '../Portfolio/Portfolio';
 import Services from '../Services/Services';

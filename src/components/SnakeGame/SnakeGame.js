@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { Box, Image, Text, VStack } from '@chakra-ui/react';
 import tetris from '../../assets/tetris.png';
 import WindowBox from '../WindowBox/WindowBox';
@@ -37,5 +38,8 @@ const SnakeGame = ({ zIndex, bringToFront }) => {
     </>
   );
 };
-
+SnakeGame.propTypes = {
+  zIndex: PropTypes.number.isRequired,
+  bringToFront: PropTypes.func.isRequired,
+};
 export default SnakeGame;

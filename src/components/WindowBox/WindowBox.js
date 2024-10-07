@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { Box, Text, IconButton, useBreakpointValue } from '@chakra-ui/react';
 import { FaTimes } from 'react-icons/fa';
 import { Rnd } from 'react-rnd';
@@ -51,12 +52,30 @@ const WindowBox = ({ title, content, onClose, zIndex, bringToFront, backgroundCo
             aria-label="Close window"
           />
         </Box>
-        <Box flexGrow={1} overflow="auto" backgroundColor={backgroundColor}onMouseEnter={() => setIsDraggingDisabled(true)}  onMouseLeave={() => setIsDraggingDisabled(false)}>
+        <Box flexGrow={1} overflow="auto" backgroundColor={backgroundColor} onMouseEnter={() => setIsDraggingDisabled(true)}  onMouseLeave={() => setIsDraggingDisabled(false)}>
           {content}
         </Box>
       </Box>
     </Rnd>
   );
+};
+
+// Add PropTypes validation
+WindowBox.propTypes = {
+  title: PropTypes.string.isRequired,
+  content: PropTypes.node.isRequired,
+  onClose: PropTypes.func.isRequired,
+  zIndex: PropTypes.number.isRequired,
+  bringToFront: PropTypes.func.isRequired,
+  backgroundColor: PropTypes.string,
+  minWidth: PropTypes.number,
+  minHeight: PropTypes.number,
+};
+
+WindowBox.defaultProps = {
+  backgroundColor: "#fff",
+  minWidth: 300,
+  minHeight: 200,
 };
 
 export default WindowBox;

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { Box, Image, VStack, Text } from '@chakra-ui/react';
 import portfolio from '../../assets/portfolio.png';
 import PortfolioWindow from './PortfolioWindow'; // Import the new component
@@ -56,4 +57,9 @@ const Portfolio = ({ zIndex, bringToFront, isMenuButton }) => {
   );
 };
 
+Portfolio.propTypes = {
+  isMenuButton: PropTypes.bool.isRequired,
+  zIndex: PropTypes.number.isRequired,
+  bringToFront: PropTypes.func.isRequired,
+};
 export default Portfolio;

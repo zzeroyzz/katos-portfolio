@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Box } from '@chakra-ui/react';
 
 const MenuButton = ({ onClick, children }) => {
@@ -22,6 +23,11 @@ const MenuButton = ({ onClick, children }) => {
       {children}
     </Box>
   );
+};
+
+MenuButton.propTypes = {
+  onClick: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export default MenuButton;
