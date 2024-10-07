@@ -27,7 +27,7 @@ const AboutWindow = ({isWindowOpen, toggleWindow, zIndex, bringToFront}) => {
               {aboutData.map((service, index) => (
                 <Flex key={index} textAlign="left" flexDirection="column" gap={2}>
                   <Text fontWeight="bold">{service.title}</Text>
-                  <Text fontSize="md">{service.description}</Text>
+                  <Text fontSize={{base: "xs",lg:"md"}}>{service.description}</Text>
                 </Flex>
               ))}
             </VStack>

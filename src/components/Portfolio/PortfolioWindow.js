@@ -62,7 +62,7 @@ const PortfolioWindow = ({
                 _hover={{ bg: 'none' }}
                 onClick={toggleWebsitesWindow}
               >
-                <Image src={websites} boxSize={60} alt="Websites Folder" />
+                <Image src={websites} boxSize={{base:40, lg:60}} alt="Websites Folder" />
               </Box>
 
               <Box
@@ -76,7 +76,7 @@ const PortfolioWindow = ({
                 _hover={{ bg: 'none' }}
                 onClick={toggleResumeWindow}
               >
-                <Image src={resume} boxSize={60} alt="Resume Folder" />
+                <Image src={resume} boxSize={{base:40, lg:60}} alt="Resume Folder" />
               </Box>
             </HStack>
           }
@@ -89,15 +89,15 @@ const PortfolioWindow = ({
       {isWebsitesWindowOpen && (
         <WindowBox
           title="Websites"
-          minWidth="700"
-          minHeight="600"
+          minWidth={windowSize.width}
+          minHeight={windowSize.height}
           backgroundColor="white"
           content={
             <VStack spacing={3} align="start" backgroundColor="white" height="100%" minH="50vh" p={10}>
               <Text fontSize="lg" fontWeight="bold">
                 Websites I've designed and developed
               </Text>
-              <Grid templateColumns="repeat(2, 1fr)" gap={6}>
+              <Grid templateColumns={{base:"repeat(1, 1fr)", lg:"repeat(2, 1fr)"}} gap={6}>
                 {portfolioItems.map((item, index) => (
                   <Box key={index} cursor="pointer" onClick={() => handleBoxClick(item.url)} maxWidth="400px">
                     <Card border="1px solid black" borderRadius="8px" boxShadow="md" maxW="md" maxH="sm" minH="sm">
@@ -124,8 +124,8 @@ const PortfolioWindow = ({
       {isResumeWindowOpen && (
         <WindowBox
           title="Resume"
-          minWidth="500"
-          minHeight="400"
+          minWidth={windowSize.width}
+          minHeight={windowSize.height}
           backgroundColor="white"
           content={
             <Flex

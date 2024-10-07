@@ -6,7 +6,7 @@ const SnakeGameIframe = () => {
       src="https://zzeroyzz.github.io/snakegame/"
       title="Snake Game"
       width="100%"
-      height="540px"
+      height="640px"
       style={{ border: 'none' }}
     />
   );

@@ -20,7 +20,7 @@ const ContactWindow = ({isWindowOpen, toggleWindow, zIndex, bringToFront}) =>{
       content={
         <Flex gap={4}  p={6} flexDirection="column" justifyContent="center" alignItems="center">
           <Heading> Get In Touch </Heading>
-          <Text width="70%" textAlign="center">
+          <Text fontSize={{base: "xs",lg:"md"}} textAlign="center">
             Have a project in mind, or need help with web development,
             animations, or IT support? Fill out the form below.
           </Text>

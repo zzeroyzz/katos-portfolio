@@ -4,9 +4,9 @@ import SnakeGameIframe from './SnakeGameIframe';
 
 const SnakeWindow =({isWindowOpen, toggleWindow, zIndex, bringToFront}) =>{
   const windowSize = useBreakpointValue({
-    base: { width: "380px", height: "600px" },
-    md: { width: "700px", height: "600px" },
-    lg: { width: "900px", height: "600px" },
+    base: { width: "380px", height: "700px" },
+    md: { width: "700px", height: "700px" },
+    lg: { width: "900px", height: "700px" },
   });
   console.log(zIndex, 'zIndex')
   return(
