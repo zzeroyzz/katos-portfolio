@@ -35,10 +35,10 @@ This project was created with **React** and styled using **Chakra UI**. It featu
 ## 📸 Screenshots
 
 ### Desktop View
-![Desktop Screenshot](./public/mobilescreenshot.png)
+![Desktop Screenshot](./public/desktopscreenshot.png)
 
 ### Mobile View
-![Mobile Screenshot](./public/desktopscreenshot.png)
+![Mobile Screenshot](./public/mobilescreenshot.png)
 
 ## 🎮 Play Snake
 Click the **Snakey** icon in the menu to open a window and start playing the Snake game right in your browser!
